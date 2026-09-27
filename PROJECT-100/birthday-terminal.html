@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PROJECT: 100 // MY LOVE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="game-interface.css">
+</head>
+
+<body>
+
+<div id="background">
+    <div class="grid"></div>
+    <div class="noise"></div>
+    <div class="floating-heart heart-one">♥</div>
+    <div class="floating-heart heart-two">♥</div>
+    <div class="floating-heart heart-three">♥</div>
+    <canvas id="particles"></canvas>
+</div>
+
+
+<!-- =========================================================
+     BOOT SCREEN
+========================================================= -->
+
+<section id="boot-screen">
+
+    <div class="boot-card">
+
+        <div class="boot-small">
+            PRIVATE SERVER
+        </div>
+
+        <h1>
+            PROJECT<span>:</span>100
+        </h1>
+
+        <div class="boot-subtitle">
+            A WORLD CREATED FOR MY LOVE
+        </div>
+
+
+        <!-- =================================================
+             BIRTHDAY CAKE
+             ADDED ONLY — NOTHING ELSE CHANGED
+        ================================================== -->
+
+        <div class="birthday-cake" aria-label="Birthday cake with candles">
+
+            <div class="cake-candles">
+
+                <span class="cake-candle">
+                    <i></i>
+                </span>
+
+                <span class="cake-candle">
+                    <i></i>
+                </span>
+
+                <span class="cake-candle">
+                    <i></i>
+                </span>
+
+                <span class="cake-candle">
+                    <i></i>
+                </span>
+
+                <span class="cake-candle">
+                    <i></i>
+                </span>
+
+            </div>
+
+
+            <div class="cake-top">
+
+                <span class="cake-icing-drop drop-one"></span>
+                <span class="cake-icing-drop drop-two"></span>
+                <span class="cake-icing-drop drop-three"></span>
+                <span class="cake-icing-drop drop-four"></span>
+                <span class="cake-icing-drop drop-five"></span>
+
+            </div>
+
+
+            <div class="cake-body">
+
+                <span class="cake-detail detail-one"></span>
+                <span class="cake-detail detail-two"></span>
+                <span class="cake-detail detail-three"></span>
+
+            </div>
+
+
+            <div class="cake-plate"></div>
+
+        </div>
+
+
+        <div class="boot-line"></div>
+
+        <div class="boot-status">
+            <span id="boot-status">INITIALIZING...</span>
+            <span id="boot-percent">0%</span>
+        </div>
+
+        <div class="boot-progress">
+            <div id="boot-progress-bar"></div>
+        </div>
+
+        <div class="boot-log" id="boot-log">
+            > loading private world...
+        </div>
+
+        <button id="enter-game" disabled>
+            ENTER WORLD
+        </button>
+
+        <div class="boot-signature">
+            MADE FOR RAYLE ♥
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MAIN GAME
+========================================================= -->
+
+<main id="game-interface" class="hidden">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-symbol">P100</div>
+
+            <div>
+                <strong>PROJECT: 100</strong>
+                <small>MY LOVE SERVER</small>
+            </div>
+        </div>
+
+        <div class="top-center">
+            <span class="online-dot"></span>
+            PRIVATE SESSION
+        </div>
+
+        <div class="top-actions">
+
+            <button id="sound-toggle" class="icon-button">
+                🔊
+            </button>
+
+            <button id="reset-save" class="small-danger">
+                RESET
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="profile-card">
+
+            <div class="avatar-frame">
+
+                <div class="avatar">
+                    R
+                </div>
+
+                <span class="online-badge"></span>
+
+            </div>
+
+            <div class="profile-name">
+                RAYLE
+            </div>
+
+            <div class="profile-title">
+                MY LOVE
+            </div>
+
+            <div class="level-row">
+
+                <span>
+                    LVL <b id="level">1</b>
+                </span>
+
+                <span>
+                    <b id="xp">0</b> XP
+                </span>
+
+            </div>
+
+            <div class="xp-bar">
+                <div id="xp-fill"></div>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active" data-section="home">
+
+                <span>⌂</span>
+                HOME
+
+            </button>
+
+
+            <button class="nav-item" data-section="quests">
+
+                <span>◆</span>
+                QUESTS
+
+            </button>
+
+
+            <button class="nav-item" data-section="vault">
+
+                <span>♡</span>
+                LOVE VAULT
+
+            </button>
+
+
+            <button class="nav-item" data-section="achievements">
+
+                <span>★</span>
+                ACHIEVEMENTS
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="tiny-label">
+                CREATED WITH
+            </div>
+
+            <div class="tiny-love">
+                LOVE ♥
+            </div>
+
+            <div class="server-code">
+                RAYLE-100
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <section class="content">
+
+
+        <!-- =================================================
+             HOME
+        ================================================== -->
+
+        <section id="section-home" class="section active">
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        ✦ PRIVATE WORLD // PLAYER 001
+                    </div>
+
+                    <h2>
+                        HAPPY BIRTHDAY,
+                        <span>MY LOVE.</span>
+                    </h2>
+
+                    <p>
+                        I built this little world for you.
+                        There are games to beat, things to unlock,
+                        and 99 little pieces of something I wanted
+                        you to have.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="primary-button"
+                            data-go-section="quests">
+
+                            START QUEST
+
+                        </button>
+
+
+                        <button
+                            class="ghost-button"
+                            data-go-section="vault">
+
+                            OPEN LOVE VAULT
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-console">
+
+                    <div class="console-header">
+
+                        <span>
+                            PROJECT_100.EXE
+                        </span>
+
+                        <span>
+                            ● ONLINE
+                        </span>
+
+                    </div>
+
+
+                    <div class="console-screen">
+
+                        <div class="console-big">
+                            100
+                        </div>
+
+                        <div class="console-label">
+                            REASONS TO KEEP GOING
+                        </div>
+
+                        <div class="console-heart">
+                            ♥
+                        </div>
+
+                        <div class="console-footer">
+                            99 STRIPS + 1 FINAL LETTER
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="home-panels">
+
+                <div class="info-panel">
+
+                    <div class="panel-label">
+                        CURRENT OBJECTIVE
+                    </div>
+
+                    <h3>
+                        COMPLETE THE WORLD
+                    </h3>
+
+                    <p>
+                        Finish the quests and unlock the final
+                        message created especially for you.
+                    </p>
+
+                    <div class="objective">
+
+                        <span>
+                            PROGRESS
+                        </span>
+
+                        <strong id="home-progress">
+                            0 / 4
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-panel love-panel">
+
+                    <div class="panel-label">
+                        PRIVATE MESSAGE
+                    </div>
+
+                    <h3>
+                        FOR MY LOVE ♥
+                    </h3>
+
+                    <p>
+                        No matter how far away you are,
+                        this little world is yours.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUESTS
+        ================================================== -->
+
+        <section id="section-quests" class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        GAME CENTER
+                    </div>
+
+                    <h2>
+                        QUESTLINE
+                    </h2>
+
+                </div>
+
+
+                <div class="quest-counter">
+
+                    <span id="quest-count">
+                        0
+                    </span>
+
+                    /4 COMPLETE
+
+                </div>
+
+            </div>
+
+
+            <div class="quest-grid">
+
+
+                <!-- GAME 1 -->
+
+                <article
+                    class="quest-card"
+                    data-game-card="dodge">
+
+                    <div class="game-art dodge-art">
+
+                        <span class="art-number">
+                            01
+                        </span>
+
+                        <div class="arena-character">
+                            ◆
+                        </div>
+
+                        <div class="falling-block block-a"></div>
+                        <div class="falling-block block-b"></div>
+                        <div class="falling-block block-c"></div>
+
+                    </div>
+
+
+                    <div class="quest-body">
+
+                        <div class="quest-tag">
+                            REFLEX
+                        </div>
+
+                        <h3>
+                            SURVIVE THE ARENA
+                        </h3>
+
+                        <p>
+                            Survive the arena for exactly
+                            <strong>30 seconds.</strong>
+                        </p>
+
+                        <div class="quest-meta">
+
+                            <span>
+                                +150 XP
+                            </span>
+
+                            <span>
+                                3 ♥
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="quest-button"
+                            data-open-game="dodge">
+
+                            PLAY QUEST
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- GAME 2 -->
+
+                <article
+                    class="quest-card"
+                    data-game-card="blade">
+
+                    <div class="game-art blade-art">
+
+                        <span class="art-number">
+                            02
+                        </span>
+
+                        <div class="blade">
+                            ⚔
+                        </div>
+
+                        <div class="slash slash-one"></div>
+                        <div class="slash slash-two"></div>
+
+                    </div>
+
+
+                    <div class="quest-body">
+
+                        <div class="quest-tag">
+                            TIMING
+                        </div>
+
+                        <h3>
+                            BLADE REFLEX
+                        </h3>
+
+                        <p>
+                            Hit the strike window at the
+                            perfect moment.
+                        </p>
+
+                        <div class="quest-meta">
+
+                            <span>
+                                +200 XP
+                            </span>
+
+                            <span>
+                                7/10
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="quest-button"
+                            data-open-game="blade">
+
+                            LOCKED
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- GAME 3 -->
+
+                <article
+                    class="quest-card"
+                    data-game-card="duo">
+
+                    <div class="game-art duo-art">
+
+                        <span class="art-number">
+                            03
+                        </span>
+
+                        <div class="duo-player">
+                            ♥
+                        </div>
+
+                        <div class="sync-line"></div>
+
+                        <div class="duo-player other">
+                            ♥
+                        </div>
+
+                    </div>
+
+
+                    <div class="quest-body">
+
+                        <div class="quest-tag">
+                            MEMORY
+                        </div>
+
+                        <h3>
+                            MEMORY MATCH
+                        </h3>
+
+                        <p>
+                            Remember the sequence and
+                            repeat it before the next round.
+                        </p>
+
+                        <div class="quest-meta">
+
+                            <span>
+                                +250 XP
+                            </span>
+
+                            <span>
+                                4/5
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="quest-button"
+                            data-open-game="duo">
+
+                            LOCKED
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- GAME 4 -->
+
+                <article
+                    class="quest-card"
+                    data-game-card="music">
+
+                    <div class="game-art music-art">
+
+                        <span class="art-number">
+                            04
+                        </span>
+
+                        <div class="music-note">
+                            ♪
+                        </div>
+
+                        <div class="music-bars">
+
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quest-body">
+
+                        <div class="quest-tag">
+                            RHYTHM
+                        </div>
+
+                        <h3>
+                            MUSIC STAGE
+                        </h3>
+
+                        <p>
+                            Follow the notes and finish
+                            the final stage.
+                        </p>
+
+                        <div class="quest-meta">
+
+                            <span>
+                                +300 XP
+                            </span>
+
+                            <span>
+                                14/20
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="quest-button"
+                            data-open-game="music">
+
+                            LOCKED
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LOVE VAULT
+        ================================================== -->
+
+        <section id="section-vault" class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        PRIVATE ARCHIVE
+                    </div>
+
+                    <h2>
+                        LOVE VAULT
+                    </h2>
+
+                    <p class="heading-description">
+                        99 little strips for my love.
+                        One final letter waits at the end.
+                    </p>
+
+                </div>
+
+
+                <div class="vault-counter">
+
+                    <strong id="scroll-count">
+                        0
+                    </strong>
+
+                    <span>
+                        / 99
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="vault-warning"
+                id="vault-warning">
+
+                🔒 THE 100TH MESSAGE IS SEALED.
+                OPEN ALL 99 STRIPS TO UNLOCK IT.
+
+            </div>
+
+
+            <div
+                id="scroll-grid"
+                class="scroll-grid">
+
+                <!-- Generated by JavaScript -->
+
+            </div>
+
+
+            <div
+                class="final-letter-card locked"
+                id="final-letter-card">
+
+                <div class="final-lock">
+                    🔒
+                </div>
+
+
+                <div>
+
+                    <div class="final-label">
+                        MESSAGE 100
+                    </div>
+
+                    <h3>
+                        THE FINAL LETTER
+                    </h3>
+
+                    <p>
+                        For my love — open only after
+                        all 99 strips have been discovered.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="open-final-letter"
+                    disabled>
+
+                    SEALED
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACHIEVEMENTS
+        ================================================== -->
+
+        <section
+            id="section-achievements"
+            class="section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        PLAYER RECORD
+                    </div>
+
+                    <h2>
+                        ACHIEVEMENTS
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="achievement-grid">
+
+
+                <div
+                    class="achievement"
+                    data-achievement="first-clear">
+
+                    <div class="achievement-icon">
+                        ◆
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            FIRST CLEAR
+                        </h3>
+
+                        <p>
+                            Complete your first quest.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="achievement"
+                    data-achievement="reflex-master">
+
+                    <div class="achievement-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            REFLEX MASTER
+                        </h3>
+
+                        <p>
+                            Survive the arena.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="achievement"
+                    data-achievement="duo-sync">
+
+                    <div class="achievement-icon">
+                        ∞
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            DUO SYNC
+                        </h3>
+
+                        <p>
+                            Complete Duo Queue.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="achievement"
+                    data-achievement="rhythm-runner">
+
+                    <div class="achievement-icon">
+                        ♫
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            RHYTHM RUNNER
+                        </h3>
+
+                        <p>
+                            Finish Music Stage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="achievement"
+                    data-achievement="scroll-collector">
+
+                    <div class="achievement-icon">
+                        📜
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            SCROLL COLLECTOR
+                        </h3>
+
+                        <p>
+                            Open all 99 strips.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="achievement"
+                    data-achievement="final-reward">
+
+                    <div class="achievement-icon">
+                        ♥
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            FINAL REWARD
+                        </h3>
+
+                        <p>
+                            Open Message 100.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     GAME MODAL
+========================================================= -->
+
+<div
+    id="game-modal"
+    class="modal hidden">
+
+    <div class="game-window">
+
+
+        <div class="game-window-top">
+
+            <div>
+
+                <span class="game-window-dot"></span>
+
+                <strong id="game-window-title">
+                    GAME
+                </strong>
+
+            </div>
+
+
+            <button id="close-game">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="game-area"></div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SCROLL MODAL
+========================================================= -->
+
+<div
+    id="scroll-modal"
+    class="modal hidden">
+
+    <div class="scroll-window">
+
+
+        <button
+            id="close-scroll"
+            class="scroll-close">
+
+            ×
+
+        </button>
+
+
+        <div class="scroll-top">
+            PRIVATE MESSAGE
+        </div>
+
+
+        <div class="paper-roll top-roll"></div>
+
+
+        <div class="paper">
+
+
+            <div class="paper-number">
+
+                MESSAGE
+                <span id="opened-scroll-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="paper-heart">
+                ♥
+            </div>
+
+
+            <div class="paper-label">
+                FOR MY LOVE
+            </div>
+
+
+            <div id="scroll-message">
+            </div>
+
+
+            <div class="paper-signature">
+                — from someone who loves you
+            </div>
+
+
+        </div>
+
+
+        <div class="paper-roll bottom-roll"></div>
+
+
+        <div class="scroll-footer">
+            STRIP DISCOVERED
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div id="toast-container"></div>
+
+
+<script src="project-100.js"></script>
+
+</body>
+</html>
